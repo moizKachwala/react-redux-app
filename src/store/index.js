@@ -1,2 +1,2 @@
-const configureStore = require('./configureStore.prod').default;
+const configureStore = require('./configureStore.dev').default;
 export default configureStore();

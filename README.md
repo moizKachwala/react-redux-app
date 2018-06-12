@@ -1,1 +1,1 @@
-# amazon
+# React Redux App
