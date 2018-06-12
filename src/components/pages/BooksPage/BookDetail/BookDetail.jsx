@@ -3,15 +3,19 @@ import {connect} from 'react-redux';
 
 class BookDetail extends Component {
     render() {
-        if(!this.props.selectedBook) {
+
+        const {selectedBook} = this.props;
+
+
+        if(!selectedBook) {
             return <div>Please select atleast one book </div>
         }
 
         return (
             <div>
                 <h3>Details for : </h3>
-                <div>Title: {this.props.selectedBook.title}</div>
-                <div>Pages: {this.props.selectedBook.pages}</div>
+                <div>Title: {selectedBook.title}</div>
+                <div>Pages: {selectedBook.pages}</div>
             </div>
         );
     }
