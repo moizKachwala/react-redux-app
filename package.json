@@ -1,0 +1,35 @@
+{
+  "name": "amazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 3001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "seed"
+  ],
+  "author": "Moiz Kachwala",
+  "license": "MIT",
+  
+  "dependencies": {
+    "lodash": "4.17.4",
+    "react": "15.6.2",
+    "react-dom": "15.6.2",
+    "react-redux": "5.0.6",
+    "react-router": "3.0.5",
+    "react-router-redux": "4.0.8",
+    "redux": "3.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
