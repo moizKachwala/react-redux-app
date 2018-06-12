@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectBook } from '../../../store/actions';
+import { selectBook, list} from '../../../store/actions';
 import { bindActionCreators} from 'redux';
 
 class BooksPage extends Component {
@@ -17,6 +17,10 @@ class BooksPage extends Component {
         });
     }
 
+    componentDidMount() {
+        this.props.bookList();
+    }
+
     render() {
         return (
             <div>
@@ -31,12 +35,12 @@ class BooksPage extends Component {
 
 function mapStateToProps(state) {
     return {
-        books: state.books
+        books: state.books.data,
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({selectBook: selectBook}, dispatch);
+    return bindActionCreators({selectBook: selectBook, bookList: list}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksPage);

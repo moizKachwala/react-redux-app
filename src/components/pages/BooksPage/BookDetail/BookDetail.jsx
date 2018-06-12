@@ -3,15 +3,15 @@ import {connect} from 'react-redux';
 
 class BookDetail extends Component {
     render() {
-        if(!this.props.book) {
+        if(!this.props.selectedBook) {
             return <div>Please select atleast one book </div>
         }
 
         return (
             <div>
                 <h3>Details for : </h3>
-                <div>Title: {this.props.book.title}</div>
-                <div>Pages: {this.props.book.pages}</div>
+                <div>Title: {this.props.selectedBook.title}</div>
+                <div>Pages: {this.props.selectedBook.pages}</div>
             </div>
         );
     }
@@ -19,7 +19,7 @@ class BookDetail extends Component {
 
 function mapStateToProps(state) {
     return {
-        book: state.activeBook
+        selectedBook: state.books.selectedBook
     };
 }
 
