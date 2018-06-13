@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { selectBook, list} from '../../../store/actions';
-import { bindActionCreators} from 'redux';
 
 class BooksPage extends Component {
     renderList() {
 
-    const {books, selectBook} = this.props;
+    const {books, actions: {selectBook}} = this.props;
     
         return books && books.map((book) => {
             return (
@@ -21,7 +18,7 @@ class BooksPage extends Component {
     }
 
     componentDidMount() {
-        const {bookList} = this.props;
+        const { actions: {bookList}} = this.props;
         bookList();
     }
 
@@ -37,14 +34,4 @@ class BooksPage extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        books: state.books.data,
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({selectBook: selectBook, bookList: list}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BooksPage);
+export default BooksPage;
