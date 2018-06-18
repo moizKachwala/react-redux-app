@@ -1,0 +1,25 @@
+import React, {Component} from 'react';
+import {hashHistory, Router, Route, IndexRoute} from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux'
+import store from '../store';
+
+import App from './App.jsx';
+import {BooksPage} from './pages/BooksPage';
+import {BookDetail} from './pages/BooksPage/BookDetail';
+
+const history = syncHistoryWithStore(hashHistory, store);
+
+class Routes extends Component {
+    render() {
+        return(
+            <Router history={history}>
+                <Route path="/" component={App}>
+                    <Route path="books" component={BooksPage} />
+                    <Route path="books/:id" component={BookDetail} />
+                </Route>
+            </Router>
+        )
+    }
+}
+
+export {Routes};

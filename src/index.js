@@ -1,9 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-
-import App from './components/app';
+import Root from './components/Root.jsx';
 import store from './store';
 
 const withProvider = (children) => (
@@ -13,5 +11,5 @@ const withProvider = (children) => (
 );
 
 render(withProvider(
-  <App/>
+  <Root/>
 ), document.getElementById('root'));
