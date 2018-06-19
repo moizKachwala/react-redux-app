@@ -6,7 +6,9 @@ class BookDetail extends Component {
         const {selectedBook} = this.props;
 
         if(!selectedBook) {
-            return <div>Please select atleast one book </div>
+            return (
+                <div>Please select atleast one book </div>
+            );
         }
 
         return (

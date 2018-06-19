@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {hashHistory, Router, Route, IndexRoute} from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux';
 import store from '../store';
 
 import App from './App.jsx';
@@ -18,7 +18,7 @@ class Routes extends Component {
                     <Route path="books/:id" component={BookDetail} />
                 </Route>
             </Router>
-        )
+        );
     }
 }
 

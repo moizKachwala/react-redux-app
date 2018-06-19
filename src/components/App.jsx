@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class App extends Component {
 
   constructor (props, context) {
-    super(props, context)
+    super(props, context);
   }
 
   render () {
@@ -15,7 +15,7 @@ class App extends Component {
           {this.props.children}
         </div>
       </div>
-    )
+  );
   }
 }
 

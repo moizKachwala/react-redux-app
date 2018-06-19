@@ -1,26 +1,41 @@
-module.exports = {
+import webpack from 'webpack';
+import path from 'path';
+
+export default {
+  debug: true,
+  devtool: 'cheap-module-eval-source-map',
+  noInfo: false,
   entry: [
-    './src/index.js'
+    'eventsource-polyfill', // necessary for hot reloading with IE
+    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    './src/index'
   ],
+  target: 'web',
   output: {
-    path: __dirname,
+    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'bundle.js'
   },
-  module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-0']
-      }
-    }]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   devServer: {
-    historyApiFallback: true,
-    contentBase: './'
+    contentBase: './src'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'API_HOST': JSON.stringify('http://localhost:5000')
+      }
+    })
+  ],
+  module: {
+    loaders: [
+      {test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /(\.css)$/, loaders: ['style', 'css']},
+      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
+      {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
+      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
+    ]
   }
 };

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import BookDetailComponent from './BookDetail';
+import BookDetailComponent from './BookDetail.jsx';
 
 export const BookDetail = connect(
     (state) => ({

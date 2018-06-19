@@ -5,7 +5,7 @@ class Root extends Component {
   render() {
     return (
         <Routes/>
-    )
+    );
   }
 }
 
