@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class App extends Component {
 
-    static propTypes = {
-        children: PropTypes.any
-    }
-
     constructor (props, context) {
         super(props, context);
     }
