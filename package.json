@@ -31,10 +31,11 @@
     "babel-polyfill": "6.26.0",
     "eventsource-polyfill": "0.9.6",
     "prop-types": "15.6.0",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+
+    "babel-cli": "^6.26.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.1.2",
     "babel-loader": "^6.2.1",
