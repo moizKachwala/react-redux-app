@@ -7,6 +7,10 @@ Uses:
 * Redux
 * React Router
 * Redux Thunk middleware
+* Linting
+* Express server
+* Hot reloading
+* Transformation from es6 to es5
 
 
 Things yet to come:
@@ -16,3 +20,17 @@ Things yet to come:
 * layout
 * redux form
 * Authentication.
+
+
+How to Run the app.
+
+Installing dependencies:
+
+```bash
+npm install
+```
+
+Starting Application
+```bash
+npm start
+```
