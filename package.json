@@ -30,7 +30,8 @@
     "redux-form": "7.3.0",
     "babel-polyfill": "6.26.0",
     "eventsource-polyfill": "0.9.6",
-    "prop-types": "15.6.0"
+    "prop-types": "15.6.0",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
