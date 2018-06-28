@@ -11,6 +11,9 @@
     "React",
     "seed"
   ],
+  "engines": {
+    "node": "6.9.1"
+  },
   "author": "Moiz Kachwala",
   "license": "MIT",
 
