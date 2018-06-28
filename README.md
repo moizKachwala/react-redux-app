@@ -22,10 +22,10 @@ Things yet to come:
 * Authentication.
 
 # Play Live
-## [https://react-book-store.herokuapp.com/#/books](https://react-book-store.herokuapp.com/#/books)
+## [https://react-book-store.herokuapp.com/](https://react-book-store.herokuapp.com/)
 
 
-How to Run the app.
+##How to Run the app.
 
 Installing dependencies:
 
