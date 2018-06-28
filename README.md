@@ -25,7 +25,7 @@ Things yet to come:
 ## [https://react-book-store.herokuapp.com/](https://react-book-store.herokuapp.com/)
 
 
-##How to Run the app.
+## How to Run the app.
 
 Installing dependencies:
 
