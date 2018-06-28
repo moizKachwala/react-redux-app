@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {hashHistory, Router, Route, IndexRoute} from 'react-router';
+import {hashHistory, Router, Route, IndexRedirect} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import store from '../store';
 
@@ -14,6 +14,7 @@ class Routes extends Component {
         return(
             <Router history={history}>
                 <Route path="/" component={App}>
+                    <IndexRedirect to="books"/>
                     <Route path="books" component={BooksPage} />
                     <Route path="books/:id" component={BookDetail} />
                 </Route>

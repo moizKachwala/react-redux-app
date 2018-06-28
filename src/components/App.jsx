@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class App extends Component {
 
-  constructor (props, context) {
-    super(props, context);
-  }
+    static propTypes = {
+        children: PropTypes.any
+    }
 
-  render () {
+    constructor (props, context) {
+        super(props, context);
+    }
+
+    render () {
 
     return (
-      <div id="layout">
+      <div className="container">
         <div id="main">
           {/* this will render the child routes */}
           {this.props.children}
         </div>
       </div>
-  );
+    );
   }
 }
 

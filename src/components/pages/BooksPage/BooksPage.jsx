@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 
 class BooksPage extends Component {
-    renderList() {
 
-    const {books, actions: {selectBook}} = this.props;
-    
-        return books && books.map((book) => {
-            return (
-                <li  
-                onClick={() => selectBook(book)}
-                key={book.title} 
-                className="list-group-item">
-                    {book.title}
-                </li>
-            );
-        });
+    constructor(props) {
+        super(props);
     }
 
     componentDidMount() {
         const { actions: {bookList}} = this.props;
         bookList();
+    }
+
+    selectBook(book) {
+        const {actions: {pushHistory}} = this.props;
+        pushHistory(`/books/${book.id}`);
+    }
+
+    renderList() {
+    const {books} = this.props;
+        return books && books.map((book) => {
+            return (
+                <li
+                onClick={() => this.selectBook(book)}
+                key={book.title}
+                className="list-group-item">
+                    {book.title}
+                </li>
+            );
+        });
     }
 
     render() {
