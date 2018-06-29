@@ -4,6 +4,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import store from '../store';
 
 import App from './App.jsx';
+import {DashboardPage} from './pages/DashboardPage';
 import {BooksPage} from './pages/BooksPage';
 import {BookDetail} from './pages/BooksPage/BookDetail';
 
@@ -14,7 +15,10 @@ class Routes extends Component {
         return(
             <Router history={history}>
                 <Route path="/" component={App}>
-                    <IndexRedirect to="books"/>
+                    <IndexRedirect to="dashboard"/>
+
+                    <Route path="dashboard" component={DashboardPage} />
+
                     <Route path="books" component={BooksPage} />
                     <Route path="books/:id" component={BookDetail} />
                 </Route>
