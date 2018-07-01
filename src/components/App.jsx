@@ -10,11 +10,13 @@ class App extends Component {
     render () {
 
     return (
-      <div className="container">
-        <div id="main">
-          {/* this will render the child routes */}
-          {this.props.children}
-        </div>
+      <div className="layout">
+        <main role="main">
+            <div className="container">
+              {/* this will render the child routes */}
+              {this.props.children}
+          </div>
+        </main>
       </div>
     );
   }

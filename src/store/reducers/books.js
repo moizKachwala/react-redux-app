@@ -1,5 +1,5 @@
 import {createReducer} from '../../util';
-import {BOOKS_LIST, BOOK_SELECTED} from '../actions/index';
+import {BOOKS_LIST, BOOK_SELECTED, BOOKS_CREATE} from '../actions/books';
 
 const initialState = {
     data : [],
@@ -17,5 +17,9 @@ export default createReducer(initialState, {
 
     [BOOK_SELECTED]: (state, payload) => ({
         ...state, selectedBook: payload
-    })
+    }),
+
+    [BOOKS_CREATE]: (state, payload) => ({
+        ...state,
+    }),
 });

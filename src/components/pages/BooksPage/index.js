@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {push as pushHistory} from 'react-router-redux';
 
 import BooksPageComponent from './BooksPage.jsx';
-import { selectBook, list} from '../../../store/actions';
+import { selectBook, list} from '../../../store/actions/books';
 
 export const BooksPage = connect(
     (state) => ({

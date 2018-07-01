@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 
 class BooksPage extends Component {
 
@@ -33,10 +34,15 @@ class BooksPage extends Component {
     render() {
         return (
             <div>
-                <h1>List of Books </h1>
-                <ul className="list-group col-sm-12">
-                    {this.renderList()}
-                </ul>
+                <div className="row">
+                    <Link to="books/new" className="btn btn-primary">Add new Book</Link>
+                </div>
+                <div className="row">
+                    <h1>List of Books </h1>
+                    <ul className="list-group col-sm-12">
+                        {this.renderList()}
+                    </ul>
+                </div>
             </div>
         );
     }

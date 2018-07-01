@@ -5,6 +5,7 @@ import store from '../store';
 
 import App from './App.jsx';
 import {DashboardPage} from './pages/DashboardPage';
+import {BookCreatePage} from './pages/BooksPage/BookCreatePage';
 import {BooksPage} from './pages/BooksPage';
 import {BookDetail} from './pages/BooksPage/BookDetail';
 
@@ -15,11 +16,12 @@ class Routes extends Component {
         return(
             <Router history={history}>
                 <Route path="/" component={App}>
-                    <IndexRedirect to="dashboard"/>
+                    <IndexRedirect to="books"/>
 
                     <Route path="dashboard" component={DashboardPage} />
 
                     <Route path="books" component={BooksPage} />
+                    <Route path="books/new" mode="create" component={BookCreatePage} />
                     <Route path="books/:id" component={BookDetail} />
                 </Route>
             </Router>
