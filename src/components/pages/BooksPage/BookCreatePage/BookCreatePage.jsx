@@ -11,8 +11,10 @@ class CreateBook extends Component {
     }
 
     submit(props) {
-        const {bookName, } = props;
-        const {actions: {pushHistory}} = this.props;
+        const {bookName, pages} = props;
+        const {actions: {pushHistory, bookCreate}} = this.props;
+
+        bookCreate({id:5, title: bookName, pages});
         alert(`Book ${bookName} saved successfully`);
 
         pushHistory('/books');

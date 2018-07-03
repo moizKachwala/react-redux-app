@@ -19,7 +19,8 @@ export default createReducer(initialState, {
         ...state, selectedBook: payload
     }),
 
-    [BOOKS_CREATE]: (state, payload) => ({
+    [BOOKS_CREATE]: (state, {book}) => ({
         ...state,
+        data: [...state.data, book]
     }),
 });

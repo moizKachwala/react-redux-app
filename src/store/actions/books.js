@@ -11,7 +11,7 @@ export const list = () => ({
     type: BOOKS_LIST,
 });
 
-export const create = (user,) => ({
+export const create = (book) => ({
     type: BOOKS_CREATE,
-    payload: {user},
+    payload: {book},
 });
