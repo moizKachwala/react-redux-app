@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
-    "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "start": "cross-env NODE_ENV=production node tools/publicServer.js",
     "dev": "babel-node tools/server.js",
     "build": "babel-node tools/build.js",
@@ -36,7 +34,8 @@
     "redux": "3.7.2",
     "redux-form": "7.3.0",
     "redux-thunk": "2.2.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "cross-env": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -49,7 +48,6 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-runtime": "^6.26.0",
     "chai": "^4.1.2",
-    "cross-env": "^4.0.0",
     "enzyme": "^2.8.1",
     "eslint": "^4.14.0",
     "eslint-plugin-babel": "^4.1.2",
