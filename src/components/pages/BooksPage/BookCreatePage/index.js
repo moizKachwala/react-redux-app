@@ -4,7 +4,7 @@ import {push as pushHistory} from 'react-router-redux';
 
 import BookCreatePageComponent from './BookCreatePage.jsx';
 import bookCreateForm from '../../../../store/forms/bookCreateForm';
-import * as bookActions from '../../../../store/actions/books';
+import {create} from '../../../../store/actions/books';
 
 const selectedBook = (paramId, collection) => collection.find(({id}) => id === paramId);
 
@@ -14,7 +14,7 @@ export const BookCreatePage = connect(
     }),
     (dispatch) => ({
         actions: bindActionCreators({
-            bookActions,
+            bookCreate: create,
             pushHistory,
         }, dispatch)
     })
