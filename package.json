@@ -6,9 +6,9 @@
   "scripts": {
     "start": "babel-node tools/server.js",
     "build": "babel-node tools/build.js",
-    "lint": "eslint src",
+    "lint": "eslint --ext .js,.jsx src",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --recursive ./src/**/*.spec.js",
-    "test:watch": "npm run test --watch"
+    "test:watch": "cross-env NODE_ENV=test mocha --watch --compilers js:babel-register --recursive ./src/**/*.spec.js"
   },
   "keywords": [
     "React",
