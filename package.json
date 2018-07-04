@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "npm install --only=dev",
     "start": "cross-env NODE_ENV=production node tools/publicServer.js",
     "dev": "babel-node tools/server.js",
     "build": "babel-node tools/build.js",
