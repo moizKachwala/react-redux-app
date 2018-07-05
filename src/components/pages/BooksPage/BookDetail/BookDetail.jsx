@@ -7,14 +7,14 @@ class BookDetail extends Component {
 
         if(!selectedBook) {
             return (
-                <div>Please select atleast one book </div>
+                <div>Please select atleast one book</div>
             );
         }
 
         return (
             <div>
                 <h3>Details for : </h3>
-                <div>Title: {selectedBook.title}</div>
+                <h1>Title: {selectedBook.title}</h1>
                 <div>Pages: {selectedBook.pages}</div>
             </div>
         );
