@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './DashboardPage.scss';
+
 class DashboardPage extends Component {
 
     constructor(props) {
