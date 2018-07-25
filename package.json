@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node tools/publicServer.js",
-    "dev": "babel-node tools/server.js",
+    "heroku": "cross-env NODE_ENV=production node tools/publicServer.js",
+    "start": "babel-node tools/server.js",
     "build": "babel-node tools/build.js",
     "lint": "eslint --ext .js,.jsx src",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --recursive ./src/**/*.spec.js",
@@ -55,6 +55,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.9.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
     "mocha": "^3.2.0",
     "node-sass": "^4.9.1",
     "nodemon": "^1.17.5",
