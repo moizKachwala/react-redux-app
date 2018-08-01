@@ -61,6 +61,8 @@
     "node-sass": "^4.9.1",
     "nodemon": "^1.17.5",
     "open": "0.0.5",
+    "postcss-loader": "^2.1.6",
+    "precss": "^3.1.2",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.0",
     "redux-devtools": "^3.1.0",
