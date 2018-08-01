@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -12,21 +13,21 @@ export default {
   ],
   target: 'web',
   output: {
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+    path: `${__dirname}/dist`,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'static/js/bundle.js',
+    chunkFilename: 'static/js/[name].chunk.js',
   },
   devServer: {
     contentBase: './src'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './src/index.html',
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'API_HOST': JSON.stringify('http://localhost:5000')
-      }
-    })
   ],
   module: {
     loaders: [
@@ -34,7 +35,7 @@ export default {
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: ["style-loader", "css-loader", "sass-loader"],
       },
       {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},

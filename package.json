@@ -38,6 +38,7 @@
     "cross-env": "^4.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "^9.0.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "8.1.2",
