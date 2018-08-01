@@ -2,10 +2,8 @@ import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-export default {
-  debug: true,
+export default {  
   devtool: 'cheap-module-eval-source-map',
-  noInfo: false,
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
@@ -27,11 +25,11 @@ export default {
       template: './src/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   module: {
     loaders: [
-      {test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
+      {test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
       {test: /(\.css)$/, loaders: ['style', 'css']},
       {
         test: /\.scss$/,
