@@ -8,7 +8,6 @@ const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 const cssFilename = 'static/css/[name].[contenthash:8].css';
 
 export default {
-
   bail: true,
   devtool: shouldUseSourceMap ? 'source-map' : false,
   entry: ['./src/index.js'],
@@ -17,6 +16,7 @@ export default {
     path: path.join(__dirname, 'public'),
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+    publicPath: './'
   },
 
   plugins: [
