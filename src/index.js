@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import Root from './components/Root.jsx';
 import store from './store';
 
+import './index.scss';
+
 const withProvider = (children) => (
   <Provider store={store}>
     {children}
