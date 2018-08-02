@@ -32,7 +32,9 @@
     "react-router-redux": "4.0.8",
     "redux": "3.7.2",
     "redux-form": "7.3.0",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "path": "^0.12.7",
+    "cross-env": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.0.2",
@@ -60,8 +62,6 @@
     "open": "0.0.5",
     "postcss-loader": "^2.1.6",
     "precss": "^3.1.2",
-    "path": "^0.12.7",
-    "cross-env": "^4.0.0",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.0",
     "redux-devtools": "^3.1.0",
