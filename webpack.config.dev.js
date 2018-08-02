@@ -59,6 +59,13 @@ export default {
               loader: 'sass-loader' // compiles Sass to CSS
             }]
           },
+          {
+            exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+            loader: require.resolve('file-loader'),
+            options: {
+              name: 'static/media/[name].[hash:8].[ext]',
+            },
+          },
         ]
       }
     ]
