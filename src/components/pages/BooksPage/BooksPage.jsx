@@ -38,7 +38,7 @@ class BooksPage extends Component {
                     <Link to="books/new" className="btn btn-primary">Add new Book</Link>
                 </div>
                 <div className="row">
-                    <h1>List of Books </h1>
+                    <h1>List of Books Test </h1>
                     <ul className="list-group col-sm-12">
                         {this.renderList()}
                     </ul>
