@@ -25,7 +25,8 @@
             ".jsx"
         ],
         "import/ignore": [
-            "node_modules"
+            "node_modules",
+            "public"
         ]
     },
   "env": {
