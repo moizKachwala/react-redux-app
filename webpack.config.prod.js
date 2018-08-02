@@ -17,7 +17,6 @@ export default {
     path: path.join(__dirname, 'public'),
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
-    publicPath: '/public/'
   },
 
   plugins: [
