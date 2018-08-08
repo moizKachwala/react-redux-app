@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import { Field } from 'redux-form';
+import {noop} from 'lodash';
+
+import {TextInput} from '../../../common/TextInput';
+import {Button} from '../../../common/Button';
 
 class CreateBook extends Component {
 
@@ -31,17 +35,32 @@ class CreateBook extends Component {
             <form onSubmit={handleSubmit(props => this.submit(props))}>
                 <h1>Add new Book</h1>
                 <div className="col-md-6">
-                    <div className="form-group">
-                       <label>Book Name:</label>
-                       <Field type="text" className="form-control" component="input" name="bookName" placeholder="Book Name"/>
-                     </div>
-                     <div className="form-group">
-                        <label>Page Count:</label>
-                        <Field type="text" className="form-control" component="input" name="pages" placeholder="Page Count"/>
-                      </div>
-
-                      <button type="submit" disabled={pristine || submitting} className="btn btn-primary">Submit</button>
-                      <button className="btn btn-default" onClick={this.handleCancel}>Cancel</button>
+                    <Field 
+                        type="text"
+                        label="Book Name" 
+                        component={TextInput} 
+                        name="bookName"
+                        placeholder="Book Name"
+                    />
+                    <Field
+                        type="text"
+                        label="Page Count"
+                        component={TextInput}
+                        name="pages"
+                    />
+                    <Button 
+                        type="submit"
+                        disabled={pristine || submitting} 
+                        theme="primary"
+                        onClick={noop}
+                    >
+                        Submit
+                    </Button>
+                    <Button
+                        onClick={this.handleCancel}
+                    >
+                        Cancel 
+                    </Button>
                 </div>
             </form>
         );
