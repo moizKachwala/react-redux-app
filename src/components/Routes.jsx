@@ -3,7 +3,7 @@ import {hashHistory, Router, Route, IndexRedirect} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import store from '../store';
 
-import App from './App.jsx';
+import {DefaultLayout} from './layouts/DefaultLayout';
 import {DashboardPage} from './pages/DashboardPage';
 import {BookCreatePage} from './pages/BooksPage/BookCreatePage';
 import {BooksPage} from './pages/BooksPage';
@@ -15,8 +15,8 @@ class Routes extends Component {
     render() {
         return(
             <Router history={history}>
-                <Route path="/" component={App}>
-                    <IndexRedirect to="books"/>
+                <Route path="/" component={DefaultLayout}>
+                    <IndexRedirect to="dashboard"/>
 
                     <Route path="dashboard" component={DashboardPage} />
 

@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import {Routes} from './Routes.jsx';
 
-class App extends Component {
-
-    constructor (props, context) {
-        super(props, context);
-    }
-
-    render () {
-
+class Root extends Component {
+  render() {
     return (
-      <div className="layout">
-        <main role="main">
-            <div className="container">
-              {/* this will render the child routes */}
-              {this.props.children}
-          </div>
-        </main>
-      </div>
+        <Routes/>
     );
   }
 }
 
-export default App;
+export default Root;

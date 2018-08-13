@@ -33,16 +33,11 @@ class BooksPage extends Component {
 
     render() {
         return (
-            <div>
-                <div className="row">
-                    <Link to="books/new" className="btn btn-primary">Add new Book</Link>
-                </div>
-                <div className="row">
-                    <h1>List of Books Test </h1>
-                    <ul className="list-group col-sm-12">
-                        {this.renderList()}
-                    </ul>
-                </div>
+            <div className="row">
+                <h1>List of Books</h1>
+                <ul className="list-group col-sm-12">
+                    {this.renderList()}
+                </ul>
             </div>
         );
     }
