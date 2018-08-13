@@ -5,7 +5,7 @@
       "presets": ["react-hmre"]
     },
     "production": {
-      "presets": ["transform-decorators-legacy"]
+      "plugins": ["transform-decorators-legacy"]
     }
   }
 }
