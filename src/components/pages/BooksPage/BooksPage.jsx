@@ -42,7 +42,10 @@ class BooksPage extends Component {
 
     render() {
         const {books} = this.props;
-        const fields = ['Title', 'Pages'];
+        const fields = [
+            {label:'Title', id: 'title'},
+            {label:'Pages', id: 'pages'},
+        ];
         return (
             <div className="books-page">
                 <div className="row justify-content-end">

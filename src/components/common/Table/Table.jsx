@@ -11,8 +11,8 @@ class Table extends Component {
 
         const headerRows = fields.map((field) => {
             return (
-                <th scope="col" key={field}>
-                    {field}
+                <th scope="col" key={field.id}>
+                    {field.label}
                 </th>
             );
         });
@@ -20,8 +20,13 @@ class Table extends Component {
         const rows = data.map((row) => {
             return (
                 <tr key={`row-${row.id}`}>
-                    <td>{row.title}</td>
-                    <td>{row.pages}</td>
+                    {
+                        fields.map((field) => {
+                            return (
+                                <td key={`column-${field.id}`}>{row[field.id]}</td>
+                            );
+                        })
+                    }
                 </tr>
             );
         });
