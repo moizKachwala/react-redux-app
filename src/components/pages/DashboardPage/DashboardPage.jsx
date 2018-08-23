@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 
 import './DashboardPage.scss';
 
@@ -18,17 +19,17 @@ class DashboardPage extends Component {
         pushHistory(`/books/${book.id}`);
     }
 
-    renderList() {
+    renderCards() {
     const {books} = this.props;
         return books && books.map((book) => {
             return (
-                <div className="tile job" key={book.id}>
-                    <div className="header">
-                      <div className="count">1</div>
-                      <div className="title">Jobs</div>
-                    </div>
-                    <div className="body">
-                      <div className="title">Awaiting Reallocation</div>
+                <div className="card-deck" key={book.id}>
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">{book.title}</h5>
+                            <p className="card-text">{book.pages}</p>
+                            <Link to={`/books/${book.id}`}>Edit Book</Link>
+                        </div>
                     </div>
                 </div>
             );
@@ -39,9 +40,7 @@ class DashboardPage extends Component {
         return (
             <div className="dashboard-page">
                 <h1>Top Books </h1>
-                <ul className="list-group col-sm-12">
-                    {this.renderList()}
-                </ul>
+                {this.renderCards()}
             </div>
         );
     }
