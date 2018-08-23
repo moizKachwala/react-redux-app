@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Button } from '../../common/Button';
+import { Table } from '../../common/Table';
 
 class BooksPage extends Component {
 
@@ -40,6 +41,8 @@ class BooksPage extends Component {
     }
 
     render() {
+        const {books} = this.props;
+        const fields = ['Title', 'Pages'];
         return (
             <div className="books-page">
                 <div className="row justify-content-end">
@@ -49,9 +52,10 @@ class BooksPage extends Component {
                 </div>
                 <div className="row">
                     <h1>List of Books</h1>
-                    <ul className="list-group col-sm-12">
-                        {this.renderList()}
-                    </ul>
+                    <Table
+                        fields={fields}
+                        data={books}
+                    />
                 </div>
             </div>
         );
